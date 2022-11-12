@@ -1,0 +1,125 @@
+﻿<Window x:Class="WpfApp1._3d_model"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="_3d_model" Height="520" Width="800" Background="White" MaxWidth="800" MaxHeight="520">
+    <Grid x:Name="grid_main" Background="Black" Margin="0,0,-0.4,0">
+        <Viewport3D Name="viewport3D1" Margin="-76,-68,160.6,-152">
+
+            <Viewport3D.Camera>
+                <PerspectiveCamera x:Name = "camMain" Position = "6 5 4" LookDirection = "-6 -5 -4">
+                </PerspectiveCamera>
+            </Viewport3D.Camera>
+
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <DirectionalLight x:Name = "dirLightMain" Color="#fff" Direction = "-1,-1,-1">
+                    </DirectionalLight>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+
+            <ModelVisual3D x:Name = "MyModel">
+                <ModelVisual3D.Content>
+                    <GeometryModel3D>
+
+                        <!--<GeometryModel3D.Geometry>
+                            <MeshGeometry3D x:Name = "meshMain"
+                        Positions = "0 0 0  1 0 0  0 1 0  1 1 0  0 0 1  1 0 1  0 1 1  0 1 1"  
+                        TriangleIndices = "2 3 1  3 1 0  7 1 3  7 5 1  6 5 7  6 4 5  6 2 0
+                        2 0 4  2 7 3  2 6 7  0 1 5  0 5 4">
+                            </MeshGeometry3D>
+                        </GeometryModel3D.Geometry>-->
+                        <!--Positions = "0 0 0  0 0 0.33  0 1 0  0 1 0.33  0.5 0 0  0.5 0 0.33  0.5 1 0  0.5 1 0.3" -->
+                        <GeometryModel3D.Geometry>
+                            <MeshGeometry3D x:Name = "meshMain" 
+                        
+                        Positions = "0 0 0  0 0 2  0 2 0  0 2 2  2 0 0  2 2 0  2 2 2" 
+                        TextureCoordinates="0.0, 1.0,
+                                            0.0, 0.0,
+                                            0.5, 0.5,
+                                            0.5, 0.0,
+                                            0.5, 1.0,
+                                            1.0, 1.0,
+                                            1.0, 0.0"
+                        TriangleIndices = "4 2 0  5 2 4  6 3 2  5 6 2  2 3 1  2 1 0 ">
+                                <!--TriangleIndices = "4 2 0  6 2 4  7 3 2  6 7 2  2 3 1  2 1 0 ">
+                                TextureCoordinates="0.0, 0.5,
+                                            0.0, 0.0,
+                                            0.5, 0.5,
+                                            0.5, 0.5,
+                                            0.0, 1.0,
+                                            0.5, 1.0,
+                                            1.0, 1.0"-->
+
+                                <!--Positions = "0 0 0  0 0 1  0 1 0  0 1 1  1 0 0  1 0 1  1 1 0  1 1 1"-->
+
+                                <!--TriangleIndices = "0 2 4  2 4 6  4 7 6  4 7 5  2 7 6  2 7 3  0 2 3
+                        0 1 3  0 1 5  5 0 4  5 4 6  0 5 4">-->
+
+                            </MeshGeometry3D>
+                        </GeometryModel3D.Geometry>
+                        <GeometryModel3D.Material>
+                            <MaterialGroup>
+                                <DiffuseMaterial>
+                                    <DiffuseMaterial.Brush>
+                                        <ImageBrush x:Name="Box_texture" ImageSource="text_texture.png"/>
+                                    </DiffuseMaterial.Brush>
+                                </DiffuseMaterial>
+                            </MaterialGroup>
+                        </GeometryModel3D.Material>
+
+                    </GeometryModel3D>
+                </ModelVisual3D.Content>
+
+                <ModelVisual3D.Transform>
+                    <Transform3DGroup>
+                        <RotateTransform3D>
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name = "rotate" Axis = "0,0,1" Angle = "189"/>
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <RotateTransform3D>
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name = "rotate2" Axis = "0,1,0" Angle = "180"/>
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <RotateTransform3D>
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name = "rotate3" Axis = "1,0,0" Angle = "90"/>
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                    </Transform3DGroup>
+                </ModelVisual3D.Transform>
+
+            </ModelVisual3D>
+        </Viewport3D>
+
+
+        <Slider HorizontalAlignment = "Center"  
+         Margin = "230,349,231.6,54.8" Name = "slider1" 
+         VerticalAlignment = "Center"  
+         Maximum = "360"
+         ValueChanged="slider1_ValueChanged"
+         Value = "{Binding ElementName = rotate, Path=Angle}" HorizontalContentAlignment="Stretch" Width="332" VerticalContentAlignment="Center"/>
+        <Slider HorizontalAlignment = "Center"  
+            Margin = "230,371,231.6,32.8" x:Name = "slider1_Copy" 
+            VerticalAlignment = "Center"  
+            Maximum = "360"
+            ValueChanged="slider1_ValueChanged"
+            Value = "{Binding ElementName = rotate2, Path=Angle}" HorizontalContentAlignment="Stretch" Width="332" VerticalContentAlignment="Center"/>
+        <Slider HorizontalAlignment = "Center"  
+            Margin = "230,393,231.6,9.8" x:Name = "slider1_Copy1" 
+            VerticalAlignment = "Center"  
+            Maximum = "360"
+            ValueChanged="slider1_ValueChanged"
+            Value = "{Binding ElementName = rotate3, Path=Angle}" HorizontalContentAlignment="Stretch" Width="332" VerticalContentAlignment="Center"/>
+        <Button x:Name="test_btn" Content="Изменить текстуру" HorizontalAlignment="Left" Margin="601,428,0,0" VerticalAlignment="Top" Width="183" Click="test_btn_Click" Height="43" Background="#FF15CE11" BorderBrush="White"/>
+        <Button x:Name="backgound_color" Content="Button" HorizontalAlignment="Left" Margin="685,311,0,0" VerticalAlignment="Top" Width="75" Click="backgound_color_Click"/>
+        <!--Value = "{Binding ElementName = rotate, Path=Angle}"-->
+
+
+    </Grid>
+</Window>
