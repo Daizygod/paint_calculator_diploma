@@ -1,3 +1,8 @@
+<img style="height: 3em" src="https://profilinator.rishav.dev/skills-assets/csharp-original.svg" height="50" alt="C#"/><img style="height: 3em" src="https://camo.githubusercontent.com/7eb31eb11cd0528fbd17a15605b8eff28e472afeea8b8e6e7b06149fcffc5359/68747470733a2f2f7365656b6c6f676f2e636f6d2f696d616765732f312f6e65742d6c6f676f2d363831453234373432322d7365656b6c6f676f2e636f6d2e706e67" height="50" alt="WPF"/>
+<img style="height: 3em" src="https://user-images.githubusercontent.com/7389110/64734952-8a06ae80-d4df-11e9-830a-2c451a6c0694.png" height="50" alt="XAML"/>
+<img style="height: 3em" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/1200px-SQLite370.svg.png" alt="SQLlite"/>
+<img style="height: 3em" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Inno_Setup_icon.png" alt="Inno_Setup" />
+
 # Buildind calculator, diploma project by Daizygod 
 
 > NOTE: It`s my first WPF desktop application for windows on github, which help with paint calculations.
